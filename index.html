@@ -1,145 +1,56 @@
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-<!-- base라는 요소를 사용 가능, 기본 경로 지정. 밑에 경로 코드를 간략화에 도움 -->
-<base href="http://www.company.com/" />
- </head>
- <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js">    </script>
+</head>
+<body>
+    <div id="home" data-role="page" data-theme="c" >
+
+        <div data-role="content">
+            <div id="title">
+                <h1>레스토랑추천</h1>
+            </div>
+
+            <div class="choice_list">
+                <h1>음식의 종류를 선택하세요</h1>
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                            <img src="images/korean.jpg">
+                            <h3>한정식</h3>
+                         </a></li>
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                                <img src="images/western.jpg">
+                                <h3>양식</h3>
+                        </a></li>
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                            <img src="images/burger.jpg">
+                            <h3>버거</h3>
+                    </a></li>
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                            <img src="images/pizza.jpg">
+                            <h3>피자</h3>
+                    </a></li>
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                            <img src="images/buffet.jpg">
+                            <h3>뷔페</h3>
+                    </a></li>
+                    <li><a href="choosetown.html" data-transition="slidedown">
+                            <img src="images/chinese.jpg">
+                            <h3>중국식</h3>
+                    </a></li>
+                </ul>
+            </div>
+        </div>  
 
 
-  <p> 이것이 하나의 단락이죠 </P>
-  <P> THIS IS THE PARAGRAPH </P>
-  <P>  I MEAN THIS IS THE P </P>
-
-  <P>I WILL CHANG THE ROW USING BR SEE THIS <br> now it changed </p>
-  <pre>옛날 공주가 살고 있었어요. 
-  그 공주는 너무 어렸어요.
-  우리집은 용인시입니다.
-.
-.
-.
-  정말 그럴까요?
-
-  <h1>H1입니다 </h1>
- <h2>H2입니다 </h2>
-  <h3>H3입니다 </h3>
-
-<img src="images/americano.jpg" height="100" width="200" />
-<!-- input type = "text" size="12" /-->
-
-<p><b>this is bold text </b></p>
-<p><strong> this is strong text</strong></p>
-<p><i>this is italic text</i></p>
-<p><em>this is em text</em></p>
-<p><code>this is code text</code></p>
-<p>efgh<sub>this is sub text</sub>efgh</p>
-<p>abcd<sup>this is sup text</sup>abcd</p>
-
-this is horizental line
-<hr />
-see this?
-
-<P> 스페이스 열개 줍니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp 끝 <br>
-
-less than mark &lt;<br>
-greater than mark  &gt; <br>
-double quotation&quot; <br>
-엠퍼센트&amp; 
-
-</p>
-
-
-  <h1>Web 커피 메뉴 </h1>
-  <h2>아메리카노 5000원 </h2>
-  <p>에스프레소에 물을 추가한 것입니다 </p>
-  <h2>카페오레 6000원 </h2>
-  <p>에스프레소에 우유를 넣은 커피입니다 </p>
-  <h2>카푸치노 6000원 </h2>
-  <p> 커피위에 우유 거품을 얹은 커피입니다 </p>
-
-<ul>
-<li> 에스프레소</li>
-<li> 아메리카노</li>
-<li> 카푸치노</li>
-</ul>
-
-<ol>
-<li> 녹차</li>
-<li> 감잎차</li>
-<li> 카모마일</li>
-</ol>
-
-<dl> <!--definition list-->
-	<dt>에스프레소 </dt><!--definition title-->
-	<dd>-원액 </dd><!--definition description-->
-	<dt>아메리카노 </dt>
-	<dd>-물탄거 </dd>
-	<dt>라떼</dt>
-	<dd> -우유탄거<dd>
-</dl>
-
-<!--"target"속성의 디폴트값은 자신페이지-->
-<a href = "#" target="_blank">구글 바로가기</a>
-<p> traget속성이 "_blank"이르모 링크는 새로운 탭에서 열리죠 </p>
-<img src = "./images/americano.jpg"> <br>
-
-<a href="#section1"> 참고사항으로 가려면 여기 누르셈 </a>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<p> 안녕하세요 김재연입니다 </p>
-<hr/>
-<a id = "section1">참고사항</a>
-<hr />
-<p>동일한 페이지 안에서도 점프할 수 있습니다</p>
-
-<a href="mailto:jaeyeon.kim@abc.com?subject=Feedback">주인에게 메일 보내기 </a><br>
-<a href="./강의자료/data.zip">파일 다운로드</a>
-
-<h2>허블</h2>
-<img src="./images/hubble.jpg" border="0" alt="허블" width="300" height="230">
-
-<p>해당 이미지 본문 </p>
-<h1>Welcome to Web Coffee</h1>
-<img src="./images/coffee.gif" alt="커피"  height="100" width="200" />
-<p>하우스 로스팅 원두의 신선한 커피를 맛보고 싶다면 이리로 오세요</p>
-<h2>메뉴</h2>
-<p>아메리카노, 카페라테, 카푸치노, 카페모카... </p>
-<img src="images/americano.jpg" height="100" width="200" />
-
-
-<h1> 나사가 제공하는 이미지들 </h1>
-<p>고해상도이미지를 제공한다</p>
-<h2> Hubble Images </h2>
-<p>허브 망원경으로 촬영한 이미지로서 우주의 초기모습이다</p>
-<p>
-	<img src="thumbnails/PIA03149_hithumb.jpg" alt="태양">
-	<img src="thumbnails/PIA03542_hithumb.jpg" alt="별">
-
-
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- </body>
+    </div>
+</body>
 </html>
