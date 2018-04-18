@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+                <button style="font-size:15px;" id="buton" onClick="ShowMySinger()">내가 좋아하는 가수는 누구일까염?</button>
+                <form action="">
+                    가수: <input style="font-size:15px;" type="text" id="box_singer">
+                    연주시간: <input style="font-size:15px;" type="text" id="box_length">
+                    제목: <input style="font-size:15px;" type="text" id="box_title">
+                </form>
+            </div>
+    <script>
+    var a = {
+        singer: "뽀로로",
+        length: "3분50초",
+        title: "노는게 제일 좋아"
+    }
+
+    function ShowMySinger() {
+    document.getElementById("box_singer").value = a.singer;
+    document.getElementById("box_length").value = a.length;
+    document.getElementById("box_title").value = a.title;
+    };
+    </script> 
+
+        
+        
+    <br>
+    
+
+
+
+<!-- <button onclick="ShowMySinger()">내가 좋아하는 노래는 무엇일까요? 이 버튼을 눌러보세요.</button>        
+<div id="here"></div>
+
+<script>
+var singsing = {
+    singer:"뽀로로",
+    length:"3분",
+    title:"노는게 젤 좋아"
+};
+
+function ShowMySinger() {
+        document.getElementById("here").innerHTML = "노래제목: "+ singsing.singer + "<br>" + "길이: "+singsing.length + "<br>" + "제목: " + singsing.title;
+        };
+
+
+</script> -->
+
+
+</body>
+</html>

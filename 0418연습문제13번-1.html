@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function process(x) {
+            var answer = confirm('게임 한판 하실래요');
+            var txt = ""
+
+            if (answer == true) {
+                txt = '좋아염, 게임을 시작하죠';
+            } else {
+                txt = '네, 나중에 하시죠';
+            }
+
+            alert(txt);
+        }
+
+        process()
+
+
+    </script>
+
+</body>
+
+</html>
