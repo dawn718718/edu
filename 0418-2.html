@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //배열 객체 선언 1, 리터럴 표기법
+       var aa=[];
+       aa[0] = 1;
+       aa[1] = 2;
+       aa[2] = 3;
+
+       document.write(aa[0] + "<br>");
+       document.write(aa[1] + "<br>");
+       document.write(aa[2] + "<br>");
+
+       
+
+        //배열 객체 선언 2
+        var bb= new Array();
+        bb[0] = "Apple";
+        bb[1] = new Date();
+        bb[2] = 3.14;
+        document.write(bb[0] + "<br>")
+        document.write(bb[1] + "<br>")
+        document.write(bb[2] + "<br>")
+
+        //연관 배열
+        bb['a'] = "사과";
+        bb['b'] = "포도";
+        bb['c'] = "오렌지";
+
+        document.write(bb['a']);
+
+        
+
+
+
+   
+   
+   </script> 
+<br><br>
+<form action="" name="myForm">
+    field1<input type="text" name="a0"><br>
+    field2<input type="text" name="a1"><br>
+    field3<input type="text" name="a2"><br>
+    <input type="button" value="초기화" onClick="init()">
+
+</form>
+        
+<script>
+    function init() {
+        for(var i=0; i<3; i++) {
+            document.myForm["a" + i].value=i;
+        }
+    }
+
+</script>
+
+<form action="" name="myForm1">
+        field1<input type="text" name="b0"><br>
+        field2<input type="text" name="b1"><br>
+        field3<input type="text" name="b2"><br>
+        <input type="button" value="초기화" onClick="init()">
+    
+    </form>
+<script>
+        function init() {
+             
+                document.myForm1["b" + 1].value=1;
+                document.myForm1["b" + 2].value=2;
+                document.myForm1["b" + 3].value=3;
+            }
+        
+    
+    </script>
+   
+</body>
+</html>
