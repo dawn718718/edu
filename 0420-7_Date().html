@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var today;
+    //var today = new Date();
+    //today = new Date(1524201331388); //브라우저에 내장된 자바스크립트의 객체 이용함
+    //today = new Date(2019,3,6,14,20,36);
+    //today = new Date("January 20 2018 11:13:11");
+    today = new Date(); //1970.01.01 일 00시00분 기준임.
+    document.write(today.getFullYear() + "년");
+    
+    
+    document.write((1+today.getMonth())+ "월");
+    
+    document.write(today.getDate()+"일"+"<br>"); //Date()라는 생성자함수를 사용해서, today라는 객체를 만들어서, getDate()라는 메쏘드를 사용하여 날짜를 가져옴.
+    
+    //
+    // var day = today.getDay();
+    // var dayTxt = "";
+    // switch(day) {
+    // case 0: dayTxt = "일요일";
+    // case 1: dayTxt = "일요일";
+    // case 2: dayTxt = "일요일";
+    // case 3: dayTxt = "일요일";
+    // case 4: dayTxt = "일요일";
+    // case 5: dayTxt = "일요일";
+    // case 6: dayTxt = "일요일";
+    //}
+    //document.write(dayTxt);
+    
+    
+    //
+    switch (today.getDay()) {
+        case 1:document.write("월요일"+"<br>");
+        break;
+        case 2:document.write("화요일"+"<br>");
+        break;
+        case 3:document.write("수요일"+"<br>");
+        break;
+        case 4:document.write("목요일"+"<br>");
+        break;
+        case 5:document.write("금요일"+"<br>");
+        break;
+        case 6:document.write("토요일"+"<br>");
+        break;
+        case 7:document.write("일요일"+"<br>");
+        break;
+            }
+    document.write(today.getHours()+ "시 ");
+    document.write(today.getMinutes()+"분 ");
+    document.write(today.getSeconds()+"초");
+    </script>
+</body>
+</html>

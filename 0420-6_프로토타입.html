@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function Point (xpos, ypos) {
+            this.x = xpos;
+            this.y = ypos;
+            //this.getDistance = function() {
+            //    return Math.sqrt(this.x * this.x + this.y * this.y);
+            //}
+        }
+
+        Point.prototype.getDistance = function() {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            }
+
+        var p1 = new Point(10,20);
+        var d1 = p1.getDistance();
+        document.write(d1 + "<br>");
+
+        var p2 = new Point(10,30);
+        var d2 = p2.getDistance();
+        document.write(d2);
+
+
+    </script>
+</body>
+</html>

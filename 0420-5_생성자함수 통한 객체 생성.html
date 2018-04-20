@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //생성자함수를 통한 객체 생성, 객체를 만든 붕어빵 틀과 같은 역할 함. => 속성이 다른 객체 생성
+        function Car(m, s, c) { //함수명의 첫캐릭터는 대문자
+            this.model = m;
+            this.speed = s;
+            this.color = true; //사용자 지정이 아닌 기본값으로 지정
+            this.brake = function() {
+                this.speed -=10;
+            }
+            this.aceel = function() {
+                this.speed +=10;
+            }
+        }
+
+
+        var myCar = new Car("520d",60,"red"); //메모리에 올라감 완료.
+        myCar.turbo = true; //클래스 기본지정 속성외 단독 속성 따로 지정할수 있음.
+        myCar.showModel = function() {
+            alert("모델은" + this.model+ "입니다");} //클래스 기본지정 속성(함수)외 단독 속성(함수) 따로 지정할수 있음.
+        document.write(myCar.turbo + "<br>");
+        document.write(myCar.color + "<br>");
+        myCar.showModel();
+
+        var hisCar = new Car("i30", 50, "black");
+        document.write(hisCar.model +  "<br>");
+
+
+    </script>
+</body>
+</html>

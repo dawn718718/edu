@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myCar = {
+                model: "520d",
+                speed: 60,
+                color: "red",
+                brake: function() {
+                    //this.speed = this.speed - 10;
+                    this.speed -= 10;},
+                accel: function() {
+                    //this.speed = this.speed + 10
+                    this.speed += 10}    
+            };
+            document.write(myCar.color + "<br>");
+            myCar.color = 'yellow';
+            document.write(myCar.color + "<br>");
+            myCar.brake();
+            document.write(myCar.speed + "<br>");
+           
+
+    </script>
+</body>
+</html>
