@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>태그이름으로요소찾기</title>
+    <!--li 리스트에 있는 항목들을 alert로 차례로 출력하라-->
+    <script>
+       function display() {
+            // var obj=document.getElementsByTagName("ul");
+            // obj[0]
+            var list=document.getElementsByTagName("ul")[0];
+            //var allItems = document.getElementsByTagName("li");//모든 li를 다 가져옴
+            var allItems = list.getElementsByTagName("li");//특히 list에 있는 li만 가져와라
+            for (var i=0, length = allItems.length; i < length ; i++ ) {
+                alert(allItems[i].firstChild.data);
+            }
+       }
+       //함수로 묶어주지 않고 스크립트를 먼저 기재하면, alert가 실행안됨. 아래와 같이 onclick이벤트로 함수를 실행하게 해야, 스크립트가 위에 있어도 작동가능.
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <button onclick="display()">click</button>
+</body>
+</html>

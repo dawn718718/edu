@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>입력양식이름찾기</title>
+    <script>
+        function check() {
+        //    var obj = document.myform.text1; //요소의 "name"으로 접근
+           var obj = document.forms[0].elements[0];
+           alert (obj.value);
+        }
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" id="target" name="text1">
+        <input type="submit" value="전송" onclick="check()">
+    </form>
+</body>
+</html>
