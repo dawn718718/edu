@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼유효성검사</title>
+   
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form action="">
+        이름:<input type="text" id="name"><br>
+        아이디(6-8문자):<input type="text" id="username"><br>
+        생일:<input type="date" id="birthday"><br>
+        email: <input type="email" id="email"><br>
+        휴대폰: <input type="tel" id="phone"><br> 
+        <input type="submit" value="확인" onclick="check()"><br>
+      
+       <script>
+           function check() {
+               var email = document.getElementById('email');
+               var req = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+               if (email.value.match(req)){
+                   //성공
+                   alert('잘했다');
+               } else {
+                   alert('이메일 형식을 제대로 넣어달라. 틀렸다');
+               }
+               
+           }
+
+           function isValidEmail(str) {
+               var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+               return (str.match(regExp))? true : false;
+           }
+
+       </script>
+    </form>
+</body>
+</html>

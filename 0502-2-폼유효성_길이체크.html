@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼유효성검사</title>
+   
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form action="">
+
+        이름:<input type="text" id="name"><br>
+        <!-- 주소:<input type="text" id="addr"><br>
+        생일:<input type="date" id="birthday"><br>
+        아이디(6-8문자):<input type="text" id="username"><br>
+        email: <input type="email" id="email"><br>
+        휴대폰: <input type="tel" id="phone"><br> 
+        <input type="submit" value="확인"><br>-->
+        <input type="text" value="확인" onclick="check()">
+        <script>
+            var name1 = document.getElementById('name');
+            function check() {
+                if (name1.value.length==0 || name1.value.length<3 || name1.value.length>8 )
+                { //name1.value=="" 이라고 해도 됨
+                    alert('3-8자리 이름을 입력해주세요');
+                    name1.focus();
+                    return false; //form 내 submit일 경우 전송하지 않겠다고 할때 이렇게 씀
+                } 
+                            
+                else {
+                    name1.focus();
+                    return true;
+                }   
+                
+
+            }
+        </script>
+    </form>
+</body>
+</html>

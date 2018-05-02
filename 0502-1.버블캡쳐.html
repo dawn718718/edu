@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+
+    <style>
+    
+        * {
+            border: 1px solid red;
+        }
+        div {
+            padding: 20px;
+        }
+        p {
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <p id="b">버블링</p>
+    </div>
+
+    <div id="d2">
+        <p id="c">캡쳐링</p>
+    </div>
+    <button onclick = "removeEvent()">d1버블링 삭제</button>
+
+
+</body>
+</html>
+
+<script>
+    function removeEvent () {
+        d1.removeEventListener('click',d1Click);
+    }
+    var d1 = document.getElementById('d1');
+    var d2 = document.getElementById('d2');
+    var b = document.getElementById('b');
+    var c = document.getElementById('c');
+   
+    function bClick() {alert("b가 클릭됨");}
+    function d1Click() {alert("d1가 클릭됨");}
+    b.addEventListener('click', bClick , false);//이벤트 이름, 실행할 함수이름, 버블링 (또는 캡쳐링)
+    d1.addEventListener('click', d1Click,false); //기본값false: 버블링
+    //d1에 이벤트리스터를 안해주면, b가 전달은 했으나 d1이 듣지 않는 것임.
+
+    function cClick() {alert('c가 클릭됨');}
+    function d2Click() {alert('d2가 클릭됨');}
+    c.addEventListener('click',cClick, true);
+    d2.addEventListener('click',d2Click,true);
+   
+    
+
+
+
+    
+</script>
