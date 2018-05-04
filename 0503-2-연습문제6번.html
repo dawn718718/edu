@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <p id=txt>버튼을 누르면 이 요소의 내용이 변경됩니다.</p>
+        <input type="button" onclick="func1('이 텍스트는 자바스크립트에서 변경한것입니다')" value="버튼을 누르세요">
+        <script>
+            var contentP = document.getElementById('txt')
+            function func1(str) {
+                contentP.innerHTML=str
+            }
+        </script>
+</body>
+</html>

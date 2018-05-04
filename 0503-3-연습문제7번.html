@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>숫자를 입력하세요</p>
+    <input type="text" id="number">
+    <input type="button" value="입력완료" onclick="check()">
+    <script>
+        function check() {
+            var abc = document.getElementById('number');
+            var reg = /^[0-9]+$/
+            if (abc.value.match(reg)) {
+                abc.focus();
+                return true;
+            } else {
+                alert ('숫자가 아닙니다')
+                abc.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function checkForm() {
+            var el = document.getElementById('myForm');
+            alert('배열길이:' + el.fruits.length);
+            
+           for (i=0 ; i<el.fruits.length; i++){
+            alert(el.fruits[i].checked);
+           }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" id="myForm">
+        <select name="fruits" id="fruits">
+            <input type="radio" name="gender" value="1" checked> 사과 <!-- radio는 배열로 묶여있음 -->
+            <input type="radio" name="gender" value="2">배
+            <input type="radio" name="gender" value="2">당근
+            <input type="radio" name="gender" value="2">생강
+            <input type="radio" name="gender" value="2">감자
+            <input type="radio" name="gender" value="2">파
+        </select>
+        <input type="button" onclick="checkForm()" value="check">
+
+    </form>
+</body>
+</html>
