@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>요소를 통해 다른요소의 스타일(css)을 변경하고싶을때</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    <style>
+        .warning {
+            border: 1px solid black;
+            background-color:yellow;
+        }
+        .base{
+            background-color:lightblue;
+        }
+        p {
+            margin:0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('#exam').removeClass("base").addClass("warning");
+            });
+           
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="exam" class='base'>
+        <p>예제 단락입니다.</p>
+    </div>
+    <button>remove and addClass()</button>
+  
+    
+</body>
+</html>

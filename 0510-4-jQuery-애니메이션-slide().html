@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>애니메이션1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+       $(document).ready(function(){//상단에 스크립트 기재시 필수!
+            $("#slideDown").click(function(){
+               $('#dog').slideDown(2000,function(){alert('slideDown')});
+               //slideDown/up()함수의 인자 : 시간, 콜백함수
+            });
+            $("#slideUp").click(function(){
+                $('#dog').slideUp(2000,function(){alert('slideUp')});
+            });
+
+            $("#stop").click(function(){
+                $('#dog').stop();
+            });
+
+
+       });
+       
+</script>
+<button id="slideDown">slideDown()</button>
+<button id="slideUp">slideUp()</button>
+<button id="stop">stop()</button><br><br>
+<img id="dog" src="dog.jpg" alt="" width="120" height="100" style="position:relative; display:none" ><br>
+   
+    
+</body>
+</html>

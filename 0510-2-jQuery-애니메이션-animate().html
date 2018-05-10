@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>애니메이션1</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+<script>
+       $(document).ready(function(){//상단에 스크립트 기재시 필수!
+            $("button").click(function(){
+                $("#dog").animate({left:'100px',opacity:'0'},1000,function(){$(this).animate({left:'0px',opacity:'1.0'},500)});
+                //animate()함수의 인자: css속성값(배열형태로), 동작 시간, 콜백함수
+            });
+
+
+       });
+       
+</script>
+    <button>animate</button>
+    <img id="dog" src="dog.jpg" alt="" width="120" height="100" style="position:relative"><br>
+   
+    
+</body>
+</html>

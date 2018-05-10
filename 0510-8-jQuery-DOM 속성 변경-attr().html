@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>애니메이션1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+            $(document).ready(function(){//html의 상단에 스크립트 기재시 필수!
+                 $('button').click(function(){
+                    console.log($('#dog').attr("width")); //속성(attr)중, "width"의 값 get함
+                    console.log($('#dog').attr("width","200"));//속성(attr)의 widht를 set함
+                 });
+     
+     
+            });
+            
+     </script>
+</head>
+<body>
+
+    <img id="dog" src="dog.jpg" alt="코알라" width="120" height="100" ><br>
+    <button>attr()</button>
+
+   
+    
+</body>
+</html>

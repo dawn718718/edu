@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script>
+         
+         $(function(){// $(document).ready(function(){}) 와 동일함. 축약형.
+            $('ul li#one').click(function(){
+            //alert($(this).text());
+            // alert($(this).html()); <i>토</i>마토 이 출력됨
+            });
+
+            $('#two').click(function(){
+                alert($(this).text());
+            });
+
+            $('#three').click(function(){
+                alert($(this).text());
+            });
+
+            // four 요소를 클릭하면 그 텍스트를 아래 page2에 출력하라
+            $('#four').click(function(){
+                var a = $(this).text(); 
+                $('#page2').text(a);라
+            });
+
+            // 요소가 input 타입일 때, 그 value를 가져와야할 때 val() 함수 사용
+            $('#btn').click(function(){
+                var one = $('#one').text();
+                $('#name').val(one);
+            });
+            
+
+            $('#btn2').click(function(){
+               $('li').each(function(){
+                   $(this).removeClass();
+               })
+            });
+
+            $('#btn3').click(function(){
+                $('#three').removeClass().addClass('cool');
+            });
+        
+        
+         });//end
+     </script>
+</head>
+<body>
+    <div id="page">
+        <h2>구입물품목록</h2>
+        <ul>
+            <li id="one" class="hot"><i>토</i>마토</li>
+            <li id="two" class="hot">딸기</li>
+            <li id="three" class="hot">바나나</li>
+            <li id="four">사과</li>
+        </ul>
+        <input type="text" name="name" id="name" value="HI">
+        <input type="hidden" name="hid" id="hid" value="hoho">
+        <input type="button" id="btn" value="클릭하세요">
+        <input type="button" id="btn2" value="CLASS를 날려주세요!!">
+        <input type="button" id="btn3" value="바나나를 파랗게해주세요">
+        
+    </div>
+    
+</body>
+</html>
