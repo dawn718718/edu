@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        .sibling * {
+            display: block;
+            border: 2px solid lightgrey;
+            color:lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+        //siblings: 현재 객체 집합의 모든(이웃) 형제요소를 리턴
+        //$("h2").siblings().css({"color":"red","border":"2px solid red"});
+       
+       // next: 현재 요소의 다음 형제 요소를 리턴
+       // $("h2").next().css({"color":"red","border":"2px solid red"});
+
+        // nextAll: 현재 요소의 다음 모든 형제들의 요소를 리턴
+        // $("h2").nextAll().css({"color":"red","border":"2px solid red"});
+
+        //prev(): 현재 요소의 이전  형제 요소를 리턴
+        //$("h2").prev().css({"color":"red","border":"2px solid red"});
+
+        //prevAll(): 현재 요소의 이전 모든  형제 요소를 리턴
+        $("h2").prevAll().css({"color":"red","border":"2px solid red"});
+    });
+    </script>
+</head>
+<body class="sibling">
+    <div> div
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</body>
+</html>

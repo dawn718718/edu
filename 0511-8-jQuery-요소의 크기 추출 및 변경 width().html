@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가로세로</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        div {
+            width: 70px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background-color:red;
+        }
+        .next {
+            background-color:blue;
+        }
+    </style>
+    <script>
+        //width:컨텐츠 크기
+        //innerWidth:패딩포함
+        //outerWidth:보더포함
+        //outerWidth(true):마진포함
+
+        $(function(){
+            var modWidth = 50;
+            $('div').click(function(){
+                $(this).width(modWidth).addClass('next');
+                modWidth-=8
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

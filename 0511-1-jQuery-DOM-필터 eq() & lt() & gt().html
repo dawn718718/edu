@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script>
+         
+         $(function(){// $(document).ready(function(){}) 와 동일함. 축약형.
+         $('#btn2').click(function(){
+                $("li:eq(1)").removeClass().addClass('cool'); //1번인덱스의 li에 대해서 cool로 스타일 변경
+            });
+            $('#btn3').click(function(){
+                $("li:lt(2)").removeClass().addClass('cool');//2번 인덱스 보다 작은 li에 대해서 cool로 스타일 변경
+            });
+            $('#btn4').click(function(){
+                $('li:gt(0)').removeClass().addClass('complete');//0번 인덱스 보다 큰 li에 대해서 complete로 스타일 변경
+            });
+        
+        
+         });//end
+     </script>
+</head>
+<body>
+    <div id="page">
+        <h2>구입물품목록</h2>
+        <ul>
+            <li id="one" class="hot"><i>토</i>마토</li>
+            <li id="two" class="hot">딸기</li>
+            <li id="three" class="hot">바나나</li>
+            <li id="four">사과</li>
+        </ul>
+        <input type="text" name="name" id="name" value="HI">
+        <input type="hidden" name="hid" id="hid" value="hoho">
+        <input type="button" id="btn" value="클릭하세요">
+        <input type="button" id="btn2" value="CLASS를 날려">
+        <input type="button" id="btn3" value="바나나 위를 파랗게">
+        <input type="button" id="btn4" value="complete요소">
+        
+    </div>
+    
+</body>
+</html>

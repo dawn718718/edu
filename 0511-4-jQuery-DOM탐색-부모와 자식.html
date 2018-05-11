@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        //parent() : 현재 객체집합의 직계 부모요소를 리턴
+        $(document).ready(function(){
+            
+            //현재 선택된 요소의 직계 부모에게
+            //$("span").parent().css("color","red");
+            
+            //현재 선택된 요소의 모든 조상에게
+           //$("span").parents().css({"color":"red","border":"2px solid red"});
+          
+            //현재 선택된 요소의 직계 자식에게
+           $("ul").children().css({"color":"red","border":"2px solid red"});
+        });
+    </script>
+    
+    <style>
+        .page * {
+            display:block;
+            border:2px solid lightgrey;
+            color:lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div style="width:500px;">
+            <ul> ul
+                <li> li
+                    <span>span</span>
+                </li>
+                <li>
+                    <span>span2</span>
+                </li>
+            </ul>
+        </div>
+        <div style="width:500px;">
+            <p>
+                <span>span</span>
+            </p>
+
+        </div>
+    </div>
+</body>
+</html>

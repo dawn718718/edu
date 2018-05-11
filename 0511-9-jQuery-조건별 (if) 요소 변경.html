@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function(){
+            $('p').click(function(){
+                if($(this).parent().is("div")){
+                   $(this).css("background-color","yellow");
+                }else {
+                    $(this).css("background-color","red");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>클릭하세요</p>
+    </div>
+</body>
+</html>

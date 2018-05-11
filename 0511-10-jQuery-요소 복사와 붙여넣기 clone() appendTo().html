@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //clone():복사
+           // element.append() : element 내에 ()내용을 붙임
+            //$('p').clone().appendTo(): p의 자식 내용을 ()에 붙임
+            $('button').click(function(){
+                $('p').clone().appendTo('body');
+            });
+           
+        });
+    </script>
+</head>
+<body>
+    <p>타겟1</p>
+    <p>타멧2</p>
+    <button>복사붙이기</button>
+</body>
+</html>

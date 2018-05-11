@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script>
+         
+         $(function(){// $(document).ready(function(){}) 와 동일함. 축약형.
+         
+            
+            $('#btn').click(function(){
+               //filter: 두번째 셀렉터와일치하는 요소를 찾아 리턴
+                $("li").filter("#two").removeClass().addClass("complete");
+                
+            });
+            //체리, 포도, 멜론, 망고, 오렌지, 복숭아, 파인애플를 추가
+            var arr = ["체리", "포도", "멜론", "망고", "포도", "오렌지", "복숭아", "파인"];
+            $('#btn2').click(function(){
+                for (var i=arr.length-1; i>=0; i--) { //거꾸로
+                $("ul").prepend('<li class="hot">' + arr[i]+'</li>');
+                }
+            });
+           
+           
+           
+
+           
+        
+        
+         });//end
+     </script>
+</head>
+<body>
+    <div id="page">
+        <h2>구입물품목록</h2>
+        <ul>
+            <li id="one" class="hot"><i>토</i>마토</li>
+            <li id="two" class="hot">딸기</li>
+            <li id="three" class="cool">바나나</li>
+            <li id="four">사과</li>
+        </ul>
+        <input type="text" name="name" id="name" value="HI">
+        <input type="hidden" name="hid" id="hid" value="hoho">
+        <input type="button" id="btn" value="보이게">
+        <input type="button" id="btn2" value="신상 추가">
+
+        
+    </div>
+    
+</body>
+</html>

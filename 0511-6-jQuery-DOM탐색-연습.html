@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script>
+         
+         $(function(){// $(document).ready(function(){}) 와 동일함. 축약형.
+         
+            
+            $('ul').hide();
+            $('h2').click(function(){
+                //$('ul').slideDown(2000);
+                $(this).next().slideDown(2000);
+            });
+           
+
+           
+        
+        
+         });//end
+     </script>
+</head>
+<body>
+    <div id="page">
+        <h2>구입물품목록</h2>
+        <ul>
+            <li id="one" class="hot"><i>토</i>마토</li>
+            <li id="two" class="hot">딸기</li>
+            <li id="three" class="cool">바나나</li>
+            <li id="four">사과</li>
+        </ul>
+        <input type="text" name="name" id="name" value="HI">
+        <input type="hidden" name="hid" id="hid" value="hoho">
+        <input type="button" id="btn1" value="보이게">
+        <input type="button" id="btn6" value="[li[class]]">
+        <input type="button" id="btn7" value="[li[class!='hot']]">
+        
+    </div>
+    
+</body>
+</html>

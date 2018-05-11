@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+     <script>
+         
+         $(function(){// $(document).ready(function(){}) 와 동일함. 축약형.
+         $('#btn').click(function(){
+                $("li:not(.hot)").removeClass().addClass('cool'); //hot 클래스 적용이 아닌 li에 대해서 적용
+            });
+            $('#btn1').click(function(){
+                $("li:contains(딸기)").removeClass().addClass('cool'); //hot 클래스 적용이 아닌 li에 대해서 적용
+            });
+            $('#btn2').click(function(){
+                $("li").append('<sub style="color:black">(국내산)</sub>'); //hot 클래스 적용이 아닌 li에 대해서 적용
+            });
+            $('#btn3').click(function(){
+                $("li:even").append('<sub style="color:black">(호주산)</sub>'); //hot 클래스 적용이 아닌 li에 대해서 적용
+            });
+            $('#btn4').click(function(){
+                $("li:odd").append('<sub style="color:yellow">(미국산)</sub>'); //hot 클래스 적용이 아닌 li에 대해서 적용
+            });
+
+           
+        
+        
+         });//end
+     </script>
+</head>
+<body>
+    <div id="page">
+        <h2>구입물품목록</h2>
+        <ul>
+            <li id="one" class="hot"><i>토</i>마토</li>
+            <li id="two" class="hot">딸기</li>
+            <li id="three" class="hot">바나나</li>
+            <li id="four">사과</li>
+        </ul>
+        <input type="text" name="name" id="name" value="HI">
+        <input type="hidden" name="hid" id="hid" value="hoho">
+        <input type="button" id="btn" value="not()">
+        <input type="button" id="btn1" value="contains()">
+        <input type="button" id="btn2" value="응용()">
+        <input type="button" id="btn3" value="even()">
+        <input type="button" id="btn4" value="odd()">
+        
+    </div>
+    
+</body>
+</html>
