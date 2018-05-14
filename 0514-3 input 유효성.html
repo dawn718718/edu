@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function(){
+            // $('input[name="fruits"]:checked').length
+            //$("#myForm").children("input[name='gender']".length);
+            
+            //라디오 버튼 체크 여부 체크
+            //alert($("input[name='gender']:checked").length);
+            
+            //셀렉트 박스의 선택 여부 검사 및, 선택된 값 체크
+            alert($("select#hobby option:selected").length);
+            
+            //submit 이벤트가 발생되면, 처리할 함수 정의
+            // $("#myForm").submit(function(){
+            //     return true //false
+            // });
+
+        });
+    </script>
+</head>
+<body>
+    <form id="myForm" action=""> <!--아이디를 줘도 되지만, 하나인것에만 가급적-->
+        <input type="checkbox" name="fruits" value="1">사과
+        <input type="checkbox" name="fruits" value="2">배
+        <input type="checkbox" name="fruits" value="3">딸기
+        <input type="checkbox" name="fruits" value="4">바나나
+        <input type="checkbox" name="fruits" value="5">오렌지
+        <br>
+        <input type="radio" name="gender" value="1">남자
+        <input type="radio" name="gender" value="2">여자
+        <br>
+        <select name="hobby" id="hobby">
+            <option value="">선택하세요</option>
+            <option value="soccer" selected >축구</option>
+            <option value="tenis">테니스</option>
+            <option value="baseball">야구</option>
+            <br><br>
+            <input type="submit" value="확인">
+        </select>
+
+
+    </form>
+</body>
+</html>

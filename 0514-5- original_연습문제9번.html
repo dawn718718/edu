@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼유효성검사</title>
+    <style>
+    td {
+        color:rgb(60, 60, 60);
+        font-size:18px;
+        font-weight: bold;
+        padding: 10px;
+        
+    }
+
+    h3 {
+        color:tomato; font-size:30px;
+    }
+
+    #inputButton1 {
+        font-size:18px;
+        margin-left:5px; 
+        width:230px; height:45px; 
+        font-weight:bold;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+    #inputButton1:hover {
+        background-color: #555555;
+        color: white;
+    }
+    #inputButton2 {   
+        font-size:18px; margin-left:20px; width:120px;
+        font-weight:bold;height:45px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+    #inputButton2:hover {
+        background-color: #555555;
+        color: white;
+    }
+    
+    </style>
+   
+</head>
+<body>
+    <h3>회원 신청서 </h3>
+    <form id="myForm" onsubmit="return checkForm()"> <!--post="get"이 디폴트임. -->
+        
+        <table>
+            <tr>
+                <td>이름*</td>
+                <td><input type="text" id="name" name="name"></td>
+            </tr>
+            <tr>
+                <td>성별*</td>
+                <td><input type="radio" name="gender" value="m">남성<input type="radio" name="gender" value="w">여성</td>
+            </tr>
+            <tr>
+                <td>휴대폰*</td>
+                <td><input type="tel" id="phone" name="phone"></td>
+            </tr>
+            <tr>
+                <td>Email*</td>
+                <td><input type="text" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>패스워드*<br><span style="font-size:12px">(6-8글자의 알파벳과 숫자만)</span></td>
+                <td><input type="password" id="pw" name="pw"></td>
+            </tr>
+            <tr>
+                <td>패스워드검증*</td>
+                <td><input type="password" id="pwCheck" name="pw"></td>
+            </tr>
+            <tr>
+                <td>관심사*</td> <!--라디오버튼-->
+                <td><input type="checkbox" name="hobby">연애
+                    <input type="checkbox" name="hobby">요리
+                    <input type="checkbox" name="hobby">여행<br>
+                    <input type="checkbox" name="hobby">컴퓨터
+                    <input type="checkbox" name="hobby">자동차
+                    <input type="checkbox" name="hobby">쇼핑
+                </td>
+            </tr>
+            <tr>
+                <td>사는 곳*</td> <!--드랍다운 선택-->
+                <td><select name="city" id="city" style="font-size:15px;">
+                        <option value="select">선택</option>
+                        <option value="seoul">서울</option>
+                        <option value="busan">부산</option>
+                        <option value="daegu">대구</option>
+                        <option value="ulsan">울산</option>
+                        <option value="daejeon">대전</option>
+                        <option value="jeju">제주</option>
+                        <option value="others">기타</option>
+                    </select>
+                </td>
+            </tr>
+        </table><br>
+        <input id="inputButton1" type="submit" value="제출" onmouseover="changeColor()">
+        <input id="inputButton2" type="reset" value="지우기" onClick="changeColor()">
+        
+       
+       
+       
+    </form>
+</body>
+</html>
+<script>
+       
+
+        //정규표현식 변수
+        var regNameError = /^[0-9]+$/g;
+        var regMobileError = /^\d{3}-\d{3,4}-\d{4}$/;
+        var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        var regPw = /^[0-9a-zA-Z]{6,8}$/;
+        
+        //Form 유효성검사
+        function checkForm() {
+            
+            var name1 = document.getElementById('name');
+            var form1 = document.getElementById ('myForm');
+            var mobile1 = document.getElementById('phone');
+            var email1 = document.getElementById('email');
+            var pw1= document.getElementById('pw');
+            var pwCheck1 = document.getElementById('pwCheck');
+           
+            if (name1.value.length==0 || name1.value.length<2 || name1.value.length>8 )
+            { 
+                alert('이름은 2-8자리로 입력하세요');
+                name1.focus();
+                return false; 
+            }
+            else if (name1.value.match(regNameError)) {
+                alert('이름에 숫자는 불가합니다')
+                name1.focus();
+                return false; 
+            } 
+
+            // if (form1.gender[0].checked==false && form1.gender[1].checked==false){
+            //     alert('남자인지 여자인지 하나는 선택해야해요')
+            //     form1.focus();
+            //     return false;
+            // } 
+
+            //성별 유효성 체크
+            var c=0
+            var genderLength = form1.gender.length;
+            for(var i=0; i<genderLength; i++) {
+                if (form1.gender[i].checked==true) {
+                    c++
+                } 
+            }
+            if (c==0) {
+                alert('적어도 하나의 성별을 입력해야합니다');
+                return false;
+            }
+
+
+
+
+
+            if (!mobile1.value.match(regMobileError)) {
+                alert('올바른 모바일 번호 형식 ###-####-#### 으로 입력하세요')
+                mobile1.focus();
+                return false;
+            }
+            
+            if (!email1.value.match(regEmail)) {
+                alert('올바른 이메일 형식으로 입력하세요.');
+                email1.focus();
+                return false;
+            }
+            
+            if (!pw1.value.match(regPw)) {
+                alert('패스워드가 특수문자를 포함하고 있거나, 6-8자리 글자가 아닙니다');
+                pw1.focus();
+                return false;
+
+            }
+            
+            if (pwCheck1.value!==pw1.value) {
+                alert('입력한 패스워드가 다릅니다. 다시 확인하십시오');
+                pwCheck1.focus();
+                return false;
+            } 
+            
+            //취미 체크박스 유효성 체크
+            var a=0
+            var hobbyLength = form1.hobby.length;
+            for(var i=0; i<hobbyLength; i++) {
+                if (form1.hobby[i].checked==true) {
+                    a++
+                } 
+            }
+            if (a==0) {
+                alert('적어도 하나의 취미는 입력해야합니다');
+                form1.focus();
+                return false;
+            }
+            
+            //사는 곳 선택상자 유효성 체크
+            var b=0;
+            var cityLength = form1.city.length;
+            for(var i=1; i<cityLength;i++){
+                if (form1.city[i].selected==true) {
+                    cityChecked++;
+                }
+            }
+            
+            if (b==0){
+                alert('사는 곳을 체크해야 합니다');
+                form1.focus();
+                return false;
+            }
+            
+            else {
+                return true;
+            }
+           
+}
+        
+     
+   </script>

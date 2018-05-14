@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>attr(), prop()</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                // $('p').each(function(){
+                //     alert($(this).prop('class'));
+                // });
+              // alert($('#chk').attr('checked'));
+              // attr()함수는 해당 속성의 입력된 html의 스트링을 가져옴
+               
+               alert($('#chk').prop('checked'));
+                // prop()함수는 true, false로 가져옴.
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class="hot">a</p>
+    <p class="cool">b</p>
+    <p class="complete">c</p>
+    <input type="checkbox" id="chk" checked="checked">hi<br>
+    <button>click</button>
+</body>
+</html>
