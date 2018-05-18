@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>jquery get</title>
+    <style>
+            div {
+                width: 300px;
+                height: 200px;
+                border:1px solid black;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script>
+        //$.get(url,서버에 전달할 data,callback함수);
+        //$.get(url,callback함수) : 전달할 데이터가 없을 경우
+         $(document).ready(function(){
+                $("button").click(function(){
+                    $.get("data.php",function(data){
+                        var a = JSON.parse(data) //문자열이 객체로 변신
+                        arr = ["","남","여"]
+                        $("div").html("이름: " + a.name + ", 나이: " + a.age + ", 성별:" + arr[a.gender]);
+                        //$("div").html(data + status);
+                    }); 
+                    
+                });
+        });
+        </script>
+    
+</head>
+<body>
+    <div>
+
+    </div>
+    <button>데이터가져오기</button>
+</body>

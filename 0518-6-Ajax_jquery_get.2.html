@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>jquery get</title>
+    <style>
+            div {
+                width: 300px;
+                height: 200px;
+                border:1px solid black;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script>
+        //$.get(url,data,callback함수);
+        //$.get(url,callback함수) : 전달할 데이터가 없을 경우
+         $(document).ready(function(){
+                $("button").click(function(){
+                    $.ajax({
+                        url:'data2.php', //전송할 서버주소
+                        type:'get', //전송타입 (메쏘드) - 디폴트임.생략가능
+                        async: true, //비동기여부 - 디폴트임.생략가능
+                        data: {"id":"a","pwd":"111"}, //서버로 전송하는 데이터
+                        dataType: 'json',
+                        timeout: 10000,//서버에서 받는 결과 데이터 타입
+                        contentType:"application/json",//전송 데이터 타입
+                        beforeSend: function(){//전송전 처리 메쏘드
+                            alert("정말 보내겠냐?")
+                        }, 
+                        success: function(data){//전송 완료 후 성공 메쏘드
+                            arr = ["","남","여"] // arr[1] = "남"
+                            for (var i=0; i<data.length; i++) {
+                            document.write("이름: " + data[i].NAME + ", 나이: " + data[i].age + ", 성별:" + arr[data[i].gender] +"<br>");
+                                
+                                // "이름: " + data[].name + ", 나이: " + data[0].age + ", 성별:" + data[0].gender +"<br>" +
+                                // "이름: " + data[1].name + ", 나이: " + data[1].age + ", 성별:" + data[1].gender +"<br>" +
+                                // "이름: " + data[2].name + ", 나이: " + data[2].age + ", 성별:" + data[2].gender +"<br>" 
+                        };
+                                
+                        }, 
+                        error:function(req,status,error){//전송 처리 에러 메쏘드
+                            alert(req.responseText);
+                            alert(status);
+                            alert(error);
+                        },
+                        complete:function(){//성공 or 실패 처리 후 호출되는 메써드
+                            alert("complete");
+                        } 
+                    });
+
+                    
+                });
+        });
+        </script>
+    
+</head>
+<body>
+    <div></div>
+    <button>데이터가져오기</button>
+</body>
+</html>

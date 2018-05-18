@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+       $(document).ready(function(){
+        var s = '[{"name":"Hong", "age":"21"},{"name":"Kim", "age":"22"},{"name":"Park", "age":"23"}]';
+        //parse: 문자열을 jason 객체를 만든다.
+        // stringify: json객체 -> string으로
+        var students = JSON.parse(s);
+        
+
+        for (var i=0; i<students.length; i++){
+        $("div").append("<p>이름: " + students[i].name + ",나이: "+ students[i].age + "</p>")
+            }
+        
+        });
+        </script>
+    <style>
+        p {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h4>학생명단</h4>
+    <div>
+    <!-- <p style="background-color:yellow">이름:<span id="name1"></span>
+        나이: <span id="age1"></span>
+    </p>
+    <p style="background-color:tomato">이름:<span id="name2"></span>
+        나이: <span id="age2"></span>
+    </p>
+    <p style="background-color:lightskyblue">이름:<span id="name3"></span>
+        나이: <span id="age3"></span>
+    </p> -->
+</div>
+</body>
+</html>

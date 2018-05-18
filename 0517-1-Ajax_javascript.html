@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax_test</title>
+    <style>
+        div {
+            width: 300px;
+            height: 60px;
+            border:1px solid black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var req = new XMLHttpRequest();
+                
+                //서버에서 결과가 오면 실행
+                req.onreadystatechange = function(){
+                    $("div").html(req.responseText);
+                }
+                //전송타입(메소드), 전송url, 비동기여부
+                req.open("GET","testfile1.txt",true); //true, false는 비동기로할지, 동기로 할지
+                req.send();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+
+    </div>
+    <button>데이터가져오기</button>
+</body>
+</html>

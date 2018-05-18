@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+       $(document).ready(function(){
+       var s = '[{"name":"Hong", "age":"21"},{"name":"Kim", "age":"22"},{"name":"Park", "age":"23"}]';
+       var students = eval(s);
+        for (var i=0; i<students.length; i++){
+       $("div").append("<p>이름: " + students[i].name + ",나이: "+ students[i].age + "</p>")
+        }
+        /*
+            for (var i=0; i<students.length; i++){
+                $("'#name'+ i").text(students[i].name);
+            };
+        
+            for (var j=0; j<students.length; j++){
+                $("'#age'+i").text(students[j].age);
+            };
+            
+        */
+        
+        
+            // $("#name1").text(students[0].name);
+            // $("#name2").text(students[1].name);
+            // $("#name3").text(students[2].name);
+        
+            // $("#age1").text(students[0].age);
+            // $("#age2").text(students[1].age);
+            // $("#age3").text(students[2].age);
+        
+        
+        });
+        </script>
+    <style>
+        p {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h4>학생명단</h4>
+    <div>
+    <!-- <p style="background-color:yellow">이름:<span id="name1"></span>
+        나이: <span id="age1"></span>
+    </p>
+    <p style="background-color:tomato">이름:<span id="name2"></span>
+        나이: <span id="age2"></span>
+    </p>
+    <p style="background-color:lightskyblue">이름:<span id="name3"></span>
+        나이: <span id="age3"></span>
+    </p> -->
+</div>
+</body>
+</html>

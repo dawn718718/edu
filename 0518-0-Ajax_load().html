@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#target").load("testfile1.txt",function(){
+                    $("#complete").append("로딩완료");
+                }); //url, 전송할데이터, 콜백함수
+            });
+        });
+    </script>
+    <style>
+            #target {
+                width: 300px;
+                height:100px;
+                border: 1px solid red;
+            }
+            #complete {
+                width: 100px;
+                height:60px;
+                border: 1px solid blue;
+            }
+        
+    </style>
+
+</head>
+
+
+<body>
+    <div id="target">
+
+    </div>
+    <button>get data</button>
+    <div id="complete"></div>
+</body>
+</html>
