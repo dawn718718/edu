@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--사용자가 본인 아이디를 넣으면 그 아이디에 해당하는 이름을 DB에서 불러와서 찍는 코드-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button").click(function(){
+                $.ajax({
+                    url:'test1.php', 
+                    type:'post',
+                    data: $("form").serialize(),
+                    dataType: 'json',
+                    timeout: 10000,
+                    contentType:"application/json",
+                    success: function(data){
+                        $("#name").html(data.name);
+                    }
+
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Get name of the entered id when the id is dawn718-->
+    <form>
+        ID: <input type="text" name="id">
+        <input type="button" value="ok" id="button"><br>
+        Your name: <p id="name"></p>
+    </form>
+</body>
+</html>
