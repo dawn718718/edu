@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- 
+JSON.parse()
+JSON -> javascript 객체 
+
+JSON.stringify()
+When sending data to a web server, the data has to be a string(=JSON?).
+Convert a JavaScript object into a string with JSON.stringify().
+javascript 객체 -> JSON
+-->
+
+<body>
+    <p id="demo" style="border:1px solid red"></p>
+    <script>
+        var myobj = {"a":"b","c":"d"};
+        var myjson = JSON.parse(myobj);
+        localStorage.setitem("savedfile",myjson);
+        var showtext = localStorage.getItem("savedfile");
+        var justobj = JSON.parse(showtext);
+        document.getElementById("demo").innerHTML=justobj.a;
+    </script>
+
+    <p id="demo" style="border:1px solid red"></p>
+
+    <script>
+    var json_books = '{"name":"John", "age":31, "city":"New York"}';
+    var obj_books = JSON.parse(json_books);
+    document.getElementById('demo').innerHTML=obj_books.name
+    </script>
+
+</body>
+</html>
